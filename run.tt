@@ -12,5 +12,10 @@
 #READ config.tt
 #READ dirs.tt
 #READ chat.tt
+#READ status.tt
+#READ junk.tt
+#READ emergency.tt
+
+enablesafety
 
 #session {eotl} {eotl.org} {2010}

@@ -1,1 +1,16 @@
 #VARIABLE         {brins}  {e;e;s;s;s;s;s;e;e;e;e;e;e;e;e;e;n;e}
+
+#alias {go alfred}
+{
+	go newhaven;s;26w;11s;12w;2nw;11w;9s;se;ne;n
+}
+
+#alias {go newhaven}
+{
+	3n;6e;3s;e;s;change channel to 5;watch tv;
+}
+
+#alias {go homeless}
+{
+	5w; 9s; d; s; d; e; 4s; 3e; n;
+}

@@ -1,0 +1,49 @@
+#act {^HP: %1/%2}
+{
+	#if { $disable_safety_eating }
+	{
+		#return
+	}
+
+	#math hp_percent { %1 / %2 };
+
+	#if { hp_percent < 0.42 && ! $safety_eating }
+	{
+		#showme {EMERGENCY EATING!!!}
+		#showme {Hitpoints at $current_hp !!!}
+		#var {safety_eating} {1}
+
+		get mre from pack;
+		get mre from chest;
+		eat mre;
+		eatget blue elixir from pack;
+		get blue elixir from chest;
+		drink blue elixir;
+		get green elixir from pack;
+		packget green elixir from chest;
+		drink green elixir;
+		get yellow elixir from pack;
+		get yellow elixir from chest;
+		drink yellow elixir;
+		get keeshka from pack;
+		greenet keeshka from chest;
+		eat keeshka;
+		get pie from packgetck;
+		get pie from chest;
+		eat pie;
+
+		#var {safety_eating} {0}
+	}
+}
+
+#alias disablesafety
+{
+	#showme {:: Disabling Safety Eating ::}
+	#var {disable_safety_eating} {1}
+}
+
+#alias enablesafety
+{
+	#showme {:: Enabling Safety Eating ::}
+	#var {disable_safety_eating} {0}
+}

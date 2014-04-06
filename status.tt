@@ -1,0 +1,86 @@
+#act {HP:\s+%1/%2\s+Mana:\s%3/%4\s+Fatigue:\s%5/%6\s+Exp:\s+%7}
+{
+	#var {current_hp} {%1}
+	#var {max_hp} {%2}
+	#var {current_mana} {%3}
+	#var {max_mana} {%4}
+	#var {current_ftg} {%5}
+	#var {max_ftg} {%6}
+	#var {current_xp} {%7}
+}
+
+#act {HP:\s+%1/%2\s+Fatigue:\s%3/%4\s+Exp:\s+%5}
+{
+	#var {current_hp} {%1}
+	#var {max_hp} {%2}
+	#var {current_mana} {0}
+	#var {max_mana} {0}
+	#var {current_ftg} {%3}
+	#var {max_ftg} {%4}
+	#var {current_xp} {%5}
+}
+
+#act {^You killed %1}
+{
+	hp;
+}
+
+#act {%1 kills %2}
+{
+	hp;
+}
+
+#act {You're too mentally exhausted}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {You're too to}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {^You killed %1}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {^%1 kills %2}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {^Your hardened skin returns to normal.}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {^Your reflexes return to normal.}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {^You fail to use your reflex heightening ability!}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {^You don't feel as tough anymore.}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {^You slow down}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {^You regain your strength}
+{
+	#line log {logs/status.log} {%0}
+}
+
+#act {^The rune fades from your skin.}
+{
+	#line log {logs/status.log} {%0}
+}

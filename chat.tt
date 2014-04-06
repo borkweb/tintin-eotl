@@ -11,31 +11,31 @@
 	}
 }
 
-#act {%1 tells you: %2}
+#act {^%1 tells you: %2}
 {
   #line log {logs/chat.log} {%1 tells you: %2}
 	#var {chatting} 1
 }
 
-#act {You tell %1: %2}
+#act {^You tell %1: %2}
 {
   #line log {logs/chat.log} {You tell %1: %2}
 	#var {chatting} 1
 }
 
-#act {%1 says: %2}
+#act {^%1 says: %2}
 {
   #line log {logs/chat.log} {%1 says: %2}
 	#var {chatting} 1
 }
 
-#act {You say: %1}
+#act {^You say: %1}
 {
   #line log {logs/chat.log} {You say: %1}
 	#var {chatting} 1
 }
 
-#act {(Group) %1}
+#act {^(Group) %1}
 {
   #line log {logs/chat.log} {(Group) %1}
 	#var {chatting} 1

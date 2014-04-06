@@ -1,0 +1,29 @@
+#act {You pick up an Enforcer's tabard.}
+{
+  junk Enforcer's tabard;
+}
+
+#act {You pick up Gauntlets of Ogre Power.}
+{
+  junk Gauntlets of Ogre Power;
+}
+
+#act {You pick up an unholy defender sword of Chaos.}
+{
+  junk defender sword;
+}
+
+#act {You pick up a Jade-Enameled Mempo.}
+{
+	junk mempo
+}
+
+#act {You pick up the katana of Saito Hajime.}
+{
+	junk katana
+}
+
+#act {You pick up A Long Prayer Stick.}
+{
+	junk A Long Prayer Stick
+}
