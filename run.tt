@@ -11,5 +11,6 @@
 
 #READ config.tt
 #READ dirs.tt
+#READ chat.tt
 
 #session {eotl} {eotl.org} {2010}

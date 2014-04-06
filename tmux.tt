@@ -1,0 +1,20 @@
+#nop    from: http://tintin.sourceforge.net/board/viewtopic.php?t=1709&highlight=chat
+#nop    tmux.tt
+#nop    for use with tmux and abandonedrealms
+#nop    use tmux config below to insure aggressive resize
+#nop    or screens will be to large for tailing one line at a time.
+
+#class tmux open
+#sys {tmux split-window -h -p 40 "tail -f log_map.tt"}
+#sys {tmux split-window -v -p 15 "tail -f log_hurt.tt"}
+#sys {tmux split-window -v -p 15 "tail -f log_damage.tt"}
+#sys {tmux select-pane -t 0}
+#sys {tmux split-window -v -p 15 "tail -f log_tick.tt"}
+#sys {tmux split-window -v -p 15 "tail -f log_target.tt"}
+#sys {tmux select-pane -t 0}
+
+#nop     first - this script is very stable - use with config below in your home folder
+#nop     a problem - sometimes the tick starts bugging and you must 'killall tmux'
+#nop     this script could use a 'new-session' and 'attach-session' like the one above.
+#nop     how to incorporate 'new-session' and 'attach-session' into my script ?
+#class tmux close

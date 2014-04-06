@@ -1,0 +1,16 @@
+#!/bin/bash
+tmux kill-session -t eotl
+tmux new-session -d -s eotl -n eotl
+tmux split-window -h -p 50
+tmux split-window -l 10
+
+tmux select-pane -t 1
+tmux send-keys -t eotl:0 'grc tail -f ~/tintin-eotl/logs/chat.log' C-m
+
+tmux select-pane -t 2
+tmux send-keys -t eotl:0 'grc tail -f ~/tintin-eotl/logs/status.log' C-m
+
+tmux select-pane -t 0
+tmux send-keys -t eotl:0 'tt++ -G ~/tintin-eotl/run.tt' C-m
+
+tmux attach-session -t eotl

@@ -1,0 +1,51 @@
+#event {RECEIVE LINE}
+{
+  #if {1 == $chatting}
+	{
+	  #NOP if we are chatting and the line doesn't start with multiple spaces,
+		#NOP bail out of chatting
+	  #if {"%1" == "^\s?[^\s]"}
+		{
+		  #var {chatting} 0
+		}
+	}
+}
+
+#act {%1 tells you: %2}
+{
+  #line log {logs/chat.log} {%1 tells you: %2}
+	#var {chatting} 1
+}
+
+#act {You tell %1: %2}
+{
+  #line log {logs/chat.log} {You tell %1: %2}
+	#var {chatting} 1
+}
+
+#act {%1 says: %2}
+{
+  #line log {logs/chat.log} {%1 says: %2}
+	#var {chatting} 1
+}
+
+#act {You say: %1}
+{
+  #line log {logs/chat.log} {You say: %1}
+	#var {chatting} 1
+}
+
+#act {(Group) %1}
+{
+  #line log {logs/chat.log} {(Group) %1}
+	#var {chatting} 1
+}
+
+#NOP This handles line-wrapped chat messages
+#act {^\s(\s)+%2}
+{
+  #if {1 == $chatting}
+	{
+		#line log {logs/chat.log} {%1%2}
+	}
+}
